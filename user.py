@@ -8,4 +8,11 @@ class User:
         self.l_name = l_name
         self.password = password
 
-
+    def save_user(self):
+        '''
+        save_user method saves user objects into users list
+        '''
+        
+        User.user_list.append(self)
+    
+    
