@@ -40,3 +40,8 @@ def save_contacts(contact):
     '''
     contact.save_contact()
     
+def del_contact(contact):
+    '''
+    Function to delete a contact
+    '''
+    contact.delete_contact()
