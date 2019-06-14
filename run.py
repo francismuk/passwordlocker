@@ -27,9 +27,16 @@ def del_user(user):
 #     '''
 #     return user.find_by_user_name(user_name)
 
-def create_contact(fname,lname,password):
+def create_credentials(user_name,password):
     '''
-    Function to create a new contact
+    Function to create a new credentials
     '''
-    new_contact = Contact(fname,lname,phone,email)
-    return new_contact
+    new_credentials = Credentials(user_name,password)
+    return new_credentials
+
+def save_contacts(contact):
+    '''
+    Function to save contact
+    '''
+    contact.save_contact()
+    
