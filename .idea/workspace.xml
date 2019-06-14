@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="119">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -25,11 +25,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/credentials.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state relative-caret-position="119">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -43,6 +52,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/user_test.py" />
+        <option value="$PROJECT_DIR$/credentials.py" />
       </list>
     </option>
   </component>
@@ -57,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="5">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="67" />
     <option name="y" value="25" />
     <option name="width" value="650" />
@@ -138,18 +148,6 @@
     <configuration />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 30m 23s.xml">
-      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 30m 40s.xml">
-      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 31m 00s.xml">
-      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 31m 04s.xml">
-      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 31m 12s.xml">
       <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
     </history-entry>
@@ -168,16 +166,27 @@
     <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 33m 40s.xml">
       <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 34m 16s.xml">
+      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 35m 32s.xml">
+      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 10h 35m 34s.xml">
+      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_test_TestUser_test_init - 2019.06.14 at 11h 23m 41s.xml">
+      <configuration name="Unittests for user_test.TestUser.test_init" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="650" height="741" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24880382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24880382" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -193,20 +202,27 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="119">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credentials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>

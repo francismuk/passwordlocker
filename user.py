@@ -28,4 +28,3 @@ class User:
             if user.password == password:
                 return user
             
-class Credentials
