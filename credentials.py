@@ -1,46 +1,47 @@
+import pyperclip
 class Credentials:
 
-      credentials_list = []  # Empty credentials list
 
+        credentials_list = []  # Empty credentials list
 
-      def __init__(self, user_name, password):
+        def __init__(self, user_name, password):
 
          self.user_name = user_name
          self.password = password
 
+        def save_credentials(self):
+                '''
+                save_credentials method saves user objects into credentials list
+                '''
 
-      def save_credentials(self):
-        '''
-        save_credentials method saves user objects into credentials list
-        '''
+                Credentials.credentials_list.append(self)
 
-        Credentials.credentials_list.append(self)
+        def delete_credentials(self):
+                '''
+                delete_credentials method deletes a saved credentials from the credentials_list
+                '''
 
+                Credentials.credentials_list.remove(self)
 
-      def delete_credentials(self):
-        '''
-        delete_credentials method deletes a saved credentials from the credentials_list
-        '''
+        @classmethod
+        def find_by_user_name(cls, password):
+                for credentials in cls.credentials_list:
+                        if credentials.password == password:
+                         return credentials
 
-        Credentials.credentials_list.remove(self)
-
-
-      @classmethod
-      def find_by_password(cls, password):
-        for credentials in cls.credentials_list:
-                if credentials.password == password:
-                       return credentials
-
-
-      @classmethod
-      def credentials_exist(cls, password):
-        for credentials in cls.credentials_list:
-                if credentials.password == password:
-                 return True
+        @classmethod
+        def credentials_exist(cls, password):
+                for credentials in cls.credentials_list:
+                        if credentials.password == password:
+                         return True
 
                 return False
 
+        @classmethod
+        def display_credentials(cls):
+                return cls.credentials_list
 
-      @classmethod
-      def display_credentials(cls):
-        return cls.credentials_list
+        @classmethod
+        def copy_user_name(cls, user_name):
+                credentials_found = Credentials.find_by_user_name(user_name)
+                pyperclip.copy(credentials_found.user_name)
