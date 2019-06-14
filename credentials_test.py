@@ -27,7 +27,7 @@ class TestCredentials(unittest.TestCase):
         test_save_credentials test case to test if the credentials object is saved into
          the credentials list
         '''
-        self.new_credentials.save_credentials() # saving the new contact
+        self.new_credentials.save_credentials() # saving the new credentials
         self.assertEqual(len(Credentials.credentials_list),1)
         
     # def tearDown(self):
@@ -46,7 +46,7 @@ class TestCredentials(unittest.TestCase):
     #         test_credentials.save_credentials()
     #         self.assertEqual(len(Credentials.credentials_list),2)
             
-    def test_delete_contact(self):
+    def test_delete_credentials(self):
             '''
             test_delete_contact to test if we can remove a contact from our contact list
             '''
