@@ -1,5 +1,6 @@
 import unittest
 from user import User
+from user import Credentials
 
 
 class TestUser(unittest.TestCase):
@@ -52,6 +53,16 @@ class TestUser(unittest.TestCase):
         test_user = User("Test","user","1998") #new user credentials
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
+        
+    def test_find_user_by_password(self):
+        '''
+        test to check if the password is the one that corresponds with the username
+        '''
+        self.new_user.save_user()
+        test_user = User("Test","user","1234") #new user
+        test_user.save_user()
+        found_user = User.find_by_password("1234")
+        self.assertEqual(found_user.password,test_user.password)
 
 
 if __name__ == "__main__":
