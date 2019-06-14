@@ -8,23 +8,23 @@ class User:
         self.l_name = l_name
         self.password = password
 
-    # def save_user(self):
-    #     '''
-    #     save_user method saves user objects into users list
-    #     '''
+    def save_user(self):
+        '''
+        save_user method saves user objects into users list
+        '''
         
-    #     User.user_list.append(self)
+        User.user_list.append(self)
         
-    # @classmethod
-    # def find_by_password(cls,password):
-    #     '''
-    #     Method that takes the password
-    #     Args:
-    #         password: password to search for
-    #     Returns:
-    #         User
-    #     '''
-    #     for user in cls.user_list:
-    #         if user.password == password:
-    #             return user
+    @classmethod
+    def find_by_password(cls,password):
+        '''
+        Method that takes the password
+        Args:
+            password: password to search for
+        Returns:
+            User
+        '''
+        for user in cls.user_list:
+            if user.password == password:
+                return user
             
