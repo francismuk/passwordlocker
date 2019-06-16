@@ -1,4 +1,5 @@
 #!/usr/bin/env python3.6
+import pyperclip
 from user import User
 from credentials import Credentials
 
@@ -21,11 +22,15 @@ def del_user(user):
     '''
     user.delete_user()
     
-# def find_user(user_name):
-#     '''
-#     Function that finds a contact by number and returns the contact
-#     '''
-#     return user.find_by_user_name(user_name)
+def verify_user(first_name,password):
+	'''
+	Function that verifies the existance of the user before creating credentials
+	'''
+	checking_user = Credential.check_user(first_name,password)
+	return checking_user
+
+
+
 
 def create_credentials(user_name,password):
     '''
@@ -46,13 +51,7 @@ def del_credentials(credentials):
     '''
     credentials.delete_credentials()
 
-def find_credentials(user_name):
-    '''
-    Function that finds a contact by number and returns the contact
-    '''
-    return Credentials.find_by_user_name(user_name)
-
-def display_contacts():
+def display_credentials():
     '''
     Function that returns all the saved credentials
     '''
@@ -66,8 +65,30 @@ def main():
     print(f"Hello {f_name}What would you like to do?")
     print('\n')
     while True:
-        print("Use these short codes: cc - create a new user, dc - display users, fc -find a user, ex -exit the users list ")
-    
+        print("Use these short codes: cu - create a new user, du - display users, fc -find a user, ex -exit the users list ")
+        short_code = input().lower()
+if short_code == 'ex':
+        break
+
+elif short_code == 'cu':
+                        print("New Account")
+                        print("-"*10)
+
+                        print("First Name ...")
+			f_name = input()
+			
+                        print("Last Name ...")
+                        l_name = input()
+                        
+                        print("Enter password")
+			password = input()
+
+			save_user(create_user(first_name,last_name,password))
+   
+			print("\n")
+			print(f'New Account: {first_name} {last_name} login password: {password}')
+elif short_code == 'du':
+			
     
 if __name__ == '__main__':
     main()

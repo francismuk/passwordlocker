@@ -16,7 +16,7 @@ class User:
         User.user_list.append(self)
         
     @classmethod
-    def find_by_password(cls,password):
+    def find_by_password(cls,f_name,password):
         '''
         Method that takes the password
         Args:
@@ -24,7 +24,9 @@ class User:
         Returns:
             User
         '''
+        current_user = ''
         for user in cls.user_list:
-            if user.password == password:
-                return user
+           if user.f_name == f_name and user.password == password):
+                current_user = user.f_name
+                return current_user
             
