@@ -144,20 +144,20 @@ elif short_code == 'du':
 							else:
 								print('Oops! Wrong you,entered a wrong option. Try again.')
 						save_credential(create_credential(user_name,site_name,account_name,password))
-						print(' ')
-						print(f'Credential Created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
+
+						print(f'Credential Created: Site Name: {site_name} - Account Name: {account_user_name} - Password: {password}')
 						print(' ')
 					elif short_code == 'dc':
-						print(' ')
+
 						if display_credentials(user_name):
-							print('Here is a list of all your credentials')
-							print(' ')
+							print('Here is a list of all your credentials with passwords')
+
 							for credential in display_credentials(user_name):
 								print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')
 							print(' ')	
 						else:
 							print(' ')
-							print("You don't seem to have any credentials saved yet")
+							print("No credentials saved yet. Use code cc to create credentials")
 							print(' ')
 					elif short_code == 'copy':
 						print(' ')
