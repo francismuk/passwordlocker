@@ -122,23 +122,27 @@ elif short_code == 'du':
 					elif short_code == 'cc':
 						print('Enter your accout details:')
 						site_name = input()
-						account_name = input()
+						account_user_name = input()
 						while True:
 							print("-"*60)
-							print('Please choose an option for entering a password: ep-enter existing password \n gp-generate a password \n ex-exit')
-							psw_choice = input('Enter an option: ').lower().strip()
+                                                        print('\n')
+							print('Please choose an option for entering a password: ep-enter existing password, gp8-generate 8 digit password, gp6-generate 6 digit password ,ex-exit')
+							psw_choice = input()
 							print("-"*60)
 							if psw_choice == 'ep':
 								print(" ")
 								password = input('Enter your password: ').strip()
 								break
-							elif psw_choice == 'gp':
+							elif psw_choice == 'gp8':
 								password = generate_password()
+								break
+                                                        elif psw_choice == 'gp6':
+								password = generate_password_six()
 								break
 							elif psw_choice == 'ex':
 								break
 							else:
-								print('Oops! Wrong option entered. Try again.')
+								print('Oops! Wrong you,entered a wrong option. Try again.')
 						save_credential(create_credential(user_name,site_name,account_name,password))
 						print(' ')
 						print(f'Credential Created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
