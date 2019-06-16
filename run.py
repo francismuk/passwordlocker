@@ -111,22 +111,21 @@ elif short_code == 'du':
 				print(' ')
 				while True:
 					print("-"*60)
-					print('Navigation codes: \n cc-Create a Credential \n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
-					short_code = input('Enter a choice: ').lower().strip()
+                                        print('\n')
+					print('Navigation codes: cc-Create a Credential, dc-Display Credentials, copy-Copy Password, ex-Exit')
+					short_code = input()
 					print("-"*60)
 					if short_code == 'ex':
 						print(" ")
-						print(f'Goodbye {user_name}')
+						print(f'Successfully logged out from account {user_name}')
 						break
 					elif short_code == 'cc':
-						print(' ')
-						print('Enter your credential details:')
-						site_name = input('Enter the site\'s name- ').strip()
-						account_name = input('Enter your account\'s name - ').strip()
+						print('Enter your accout details:')
+						site_name = input()
+						account_name = input()
 						while True:
-							print(' ')
 							print("-"*60)
-							print('Please choose an option for entering a password: \n ep-enter existing password \n gp-generate a password \n ex-exit')
+							print('Please choose an option for entering a password: ep-enter existing password \n gp-generate a password \n ex-exit')
 							psw_choice = input('Enter an option: ').lower().strip()
 							print("-"*60)
 							if psw_choice == 'ep':
