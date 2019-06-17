@@ -46,18 +46,6 @@ class TestUser(unittest.TestCase):
         teardown method that does clean up after each test case has run
         '''
         User.user_list = []
-        
-        
-    def test_find_user_by_password(self):
-        '''
-        test to check if the password is the one that corresponds with the username
-        '''
-        self.new_user.save_user()
-        test_user = User("Test","user","1234") #new user
-        test_user.save_user()
-        found_user = User.find_by_password("1234")
-        self.assertEqual(found_user.password,test_user.password)
-        
 
 
 if __name__ == "__main__":

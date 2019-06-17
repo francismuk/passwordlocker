@@ -90,7 +90,6 @@ def main():
         print('')
         print('Hello, Welcome to your password locker.')
         while True:
-                print(' ')
                 print("-"*60)
                 print("Use these short codes: cu - create a new user, log - login, ex -exit")
                 short_code = input()

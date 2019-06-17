@@ -16,15 +16,6 @@ class User:
         '''
         
         User.user_list.append(self)
-    
-#     def verify_user(self,f_name,password):
-#         '''
-#         Function that verifies the existance of the user before creating credentials
-#         '''
-    
-# checking_user =
-#         Credentials.check_user(f_name,password)
-#         return checking_user
         
     @classmethod
     def find_by_password(cls,f_name,password):

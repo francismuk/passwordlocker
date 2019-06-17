@@ -88,6 +88,6 @@ class Credentials:
                  return credentials
 
         @classmethod
-        def copy_credentials(cls, account_user_name):
-            credentials_found = Credentials.find_by_account_user_name(account_user_name)
+        def copy_credentials(cls, site_name):
+            credentials_found = Credentials.find_by_site_name(site_name)
             return pyperclip.copy(credentials_found.password)
