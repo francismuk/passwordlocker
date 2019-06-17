@@ -1,3 +1,5 @@
+import random
+import pyperclip
 class User:
     
     user_list = []
@@ -26,7 +28,7 @@ class User:
         '''
         current_user = ''
         for user in cls.user_list:
-           if user.f_name == f_name and user.password == password):
+             if user.f_name == f_name and user.password == password:
                 current_user = user.f_name
                 return current_user
             
