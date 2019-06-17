@@ -65,18 +65,20 @@ def save_credentials(credentials):
     '''
     credentials.save_credentials()
 
+def display_accounts():
+        '''
+        method to display the credentials
+        '''
+        return Credentials.display_account()
 
 def del_credentials(credentials):
     '''
     Function to delete a credentials
     '''
     credentials.delete_credentials()
-    
-def checking_existing_password(account_name):
-    return Credentials.password_exist(account_name)
 
 
-def display_credentials():
+def display_credentials(f_name):
     '''
     Function that returns all the saved credentials
     '''
@@ -165,36 +167,24 @@ def main():
                                         print(f'Credential Created: Site Name: {site_name} - Account Name: {account_user_name} - Password: {password}')
                                         print('\n')
                               elif short_code == 'dc':
-                                        print('\n')
-                                        if display_credentials():
-                                           print("Here is a list of all your accounts")
-                                           for account in display_credentials():
-                                            print(f"{account.site_name} {account_user_name} {password}")
-                                            print("")
-                                        else:
-                                            print("")
-                                            print("You dont seem to have any accounts saved yet")
-                                            print("")
-                              elif short_code == "fc":
-                                print("Enter Account you want to view details for")
+                                        if display_accounts():
+                                             print("Here's your list of account(s)")
 
-                                search_account_user_name = input()
-                                if checking_existing_password(search_account_user_name):
-                                    search_password = find_password(search_account_user_name)
-                                    print("_" * 20)
-                                    print(f"Site - {search_password.site_name} ")
-                                    print(f"Acoount User Name - {search_password.account_user_name}")
-                                    print(f"Account Password - {search_password.password}")
-                                    print("_" * 20)
-
-                              elif short_code == 'copy':
-                                            print(' ')
-                                            print('Enter the site name for the credential password to copy: ')
-                                            chosen_site = input()
-                                            copy_credentials(chosen_site)
-                                            print('')
+                                             print('#'*30)
+                                             for account in display_accounts():
+                                                print(f"Site:{account.account_name} \n Use Name:{account_user_name} \n Password:{password}")
+                                                print('*'*30)
                               else:
-                                            print('Oops! Wrong option entered. Try again.')
+                                   print("Sorry....you do not have an account yet")
+
+                            #   elif short_code == 'copy':
+                            #                 print(' ')
+                            #                 print('Enter the site name for the credential password to copy: ')
+                            #                 chosen_site = input()
+                            #                 copy_credentials(chosen_site)
+                            #                 print('')
+                            #  else:
+                            #                 print('Oops! Wrong option entered. Try again.')
 
                    else:
                         print(' ')
