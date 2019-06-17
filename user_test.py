@@ -46,6 +46,17 @@ class TestUser(unittest.TestCase):
         teardown method that does clean up after each test case has run
         '''
         User.user_list = []
+    
+    @classmethod
+    def display_credentials(cls, f_name):
+                '''
+                Class method that displays list of  credentials saved
+                '''
+                user_credentials_list = []
+                for credential in credential.credentials_list:
+                     if credential.f_name == f_name:
+                        user_credentials_list.append(credential)
+                        return user_credentials_list
 
 
 if __name__ == "__main__":

@@ -71,13 +71,19 @@ def del_credentials(credentials):
     Function to delete a credentials
     '''
     credentials.delete_credentials()
+    
+def checking_existing_password(account_name):
+    return Credentials.password_exist(account_name)
 
 
-def display_credentials(f_name):
+def display_credentials():
     '''
     Function that returns all the saved credentials
     '''
-    return Credentials.display_credentials(f_name)
+    return Credentials.display_credentials()
+  
+def find_password(account_user_name):
+    return Credentials.find_by_account_user_name(account_user_name)
 
 def copy_credentials(site_name):
 	'''
@@ -162,16 +168,30 @@ def main():
                                         print(f'Credential Created: Site Name: {site_name} - Account Name: {account_user_name} - Password: {password}')
                                         print('\n')
                               elif short_code == 'dc':
-                                        if display_credentials(f_name):
+                                        print('\n')
+                                        if display_credentials():
                                          print('This is a list of all your credentials with passwords')
                                          print('\n')
-                                         for credentials in display_credentials(f_name):
-                                             print(f'Site Name: {credentials.site_name} - Account Name: {credentials.account_user_name} - Password: {credentials.password}')
+                                         for credential in display_credentials():
+                                             print(f'Site Name: {credential.site_name} - Account Name: {credential.account_user_name} - Password: {credential.password}')
                                              print('\n')
                                         else:
                                             print(' ')
                                             print("No credentials saved yet. Use code cc to create credentials")
                                             print(' ')
+                              elif short_code == "fa":
+                                print("Enter Account you want to view details for")
+
+                                search_account_user_name = input()
+                                if checking_existing_password(search_account_user_name):
+                                 search_password = find_password(search_account_user_name)
+                                 print("_" * 20)
+                                 print(f"Site - {search_password.account_user_name} ")
+                                 print(f"Acoount User Name - {search_password.u_name}")
+                                 print(f"Account Password - {search_password.account_password}")
+                                 print("_" * 20)
+                                 print("")
+                                
                               elif short_code == 'copy':
                                             print(' ')
                                             print('Enter the site name for the credential password to copy: ')
