@@ -5,9 +5,10 @@ from user import User
 class Credentials:
 
         credentials_list = []  # Empty credentials list
-        
+        user_credentials_list = []
+
         @classmethod
-        def check_user(self, cls, f_name, password):
+        def check_user(cls, f_name, password):
                 '''
 		Method that checks if the name and password entered match entries in the users_list
 		'''
@@ -56,9 +57,9 @@ class Credentials:
                 Credentials.credentials_list.remove(self)
 
         @classmethod
-        def find_by_account_user_name(cls, password):
+        def find_by_account_user_name(cls, account_user_name):
                 for credentials in cls.credentials_list:
-                        if credentials.password == password:
+                        if credentials.account_user_name == account_user_name:
                          return credentials
 
         @classmethod
@@ -78,7 +79,7 @@ class Credentials:
                 for credential in cls.credentials_list:
                      if credential.f_name == f_name:
                         user_credentials_list.append(credential)
-                        return cls.credentials_list
+                        return user_credentials_list
         
         @classmethod
         def find_by_site_name(cls, site_name):

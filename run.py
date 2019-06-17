@@ -27,7 +27,7 @@ def del_user(user):
     user.delete_user()
 
 
-def verify_user(first_name, password):
+def verify_user(f_name, password):
 	'''
 	Function that verifies the existance of the user before creating credentials
 	'''
@@ -73,7 +73,7 @@ def del_credentials(credentials):
     credentials.delete_credentials()
 
 
-def display_credentials():
+def display_credentials(f_name):
     '''
     Function that returns all the saved credentials
     '''
@@ -87,29 +87,30 @@ def copy_credentials(site_name):
 
 
 def main():
-    print("Hello, Welcome to your password locker. What is your First name?")
-    print(f"Hello {f_name}What would you like to do?")
-    print('\n')
-    while True:
-        print("Use these short codes: cu - create a new user, du - display users, fc -find a user, ex -exit the users list ")
-short_code = input()
+        print('')
+        print('Hello, Welcome to your password locker.')
+        while True:
+                print(' ')
+                print("-"*60)
+                print("Use these short codes: cu - create a new user, du - display users, fc -find a user, ex -exit the users list ")
+                short_code = input()
 
 
-while short_code == 'ex':
-        break
+                while short_code == 'ex':
+                           break
 
-if short_code == 'cu':
-        print("New Account")
-        print("-"*10)
+                if short_code == 'cu':
+                print("New Account")
+                print("-"*10)
 
         print("First Name ...")
 f_name = input()
 
-print("Last Name ...")
-l_name = input()
+# print("Last Name ...")
+# l_name = input()
 
-print("Enter password")
-password = input()
+# print("Enter password")
+# password = input()
 
 save_user(create_user(f_name, l_name, password))
 
