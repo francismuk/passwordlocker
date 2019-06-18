@@ -35,20 +35,19 @@ def verify_user(f_name, password):
 	return checking_user
 
 
-def generate_password():
+def generate_password(Credentials):
 	'''
 	Function to generate a password automatically
 	'''
-	gen_pass = Credentials.generate_password()
-	return gen_pass
+	return Credentials.generate_password(Credentials)
+ 
 
 
-def generate_password_six():
-	'''
+def generate_password_six(Credentials):
+    '''
 	Function to generate a six letter password automatically
 	'''
-	gen_pass_six = Credentials.generate_password_six()
-	return gen_pass_six
+    return Credentials.generate_password_six(Credentials)
 
 
 def create_credentials(site_name, user_account_name, password):
@@ -65,11 +64,14 @@ def save_credentials(credentials):
     '''
     credentials.save_credentials()
 
-def display_accounts():
+def credentials_exist(site_name):
+    return Credentials.credentials_exist(site_name)
+
+def display_accounts(site_name):
         '''
         method to display the credentials
         '''
-        return Credentials.display_account()
+        return Credentials.display_account(site_name)
 
 def del_credentials(credentials):
     '''
@@ -78,11 +80,6 @@ def del_credentials(credentials):
     credentials.delete_credentials()
 
 
-def display_credentials(f_name):
-    '''
-    Function that returns all the saved credentials
-    '''
-    return Credentials.display_credentials(f_name)
 
 def copy_credentials(site_name):
 	'''
@@ -139,8 +136,9 @@ def main():
                                   print(f'Successfully logged out from account {f_name}')
                                   break
                               elif short_code == 'cc':
-                                  print('Enter your account details:')
+                                  print('Enter the site you want to save credentials for:')
                                   site_name = input()
+                                  print('Enter user name:')
                                   account_user_name = input()
                                   while True:
                                       print("-"*60)
@@ -151,44 +149,49 @@ def main():
                                       if psw_choice == 'ep':
                                         print(" ")
                                         password = input('Enter your password: ').strip()
-                                        break
-                                      elif psw_choice == 'gp8':
-                                        password = generate_password()
-                                        break
-                                      elif psw_choice == 'gp6':
-                                        password = generate_password_six()
-                                        break
-                                      elif psw_choice == 'ex':
-                                        break
-                                      else:
-                                        print('Oops! Wrong you,entered a wrong option. Try again.')
                                         save_credentials(create_credentials(site_name, account_user_name, password))
-
                                         print(f'Credential Created: Site Name: {site_name} - Account Name: {account_user_name} - Password: {password}')
                                         print('\n')
+                                        break
+                                      elif psw_choice == 'gp8':
+                                        password = generate_password(Credentials)
+                                        save_credentials(create_credentials(site_name, account_user_name, password))
+                                        print(f'Credential Created: Site Name: {site_name} - Account Name: {account_user_name} - Password: {password}')
+                                        print('\n')
+                                        break
+                                      elif psw_choice == 'gp6':
+                                        new_password = generate_password_six(Credentials)
+                                        save_credentials(create_credentials(site_name, account_user_name, new_password))
+                                        print(f'Credential Created: Site Name: {site_name} - Account Name: {account_user_name} - Password: {new_password}')
+                                        print('\n')
+                                        break
+
+                                      elif psw_choice == 'ex':
+                                        break
+
+                                      else:
+                                        print('Oops! Wrong you,entered a wrong option. Try again.')
+
                               elif short_code == 'dc':
-                                        if display_accounts():
-                                             print("Here's your list of account(s)")
+                                        print('Enter your site name')
+                                        site_name = input()
+                                        if credentials_exist(site_name):
+                                           print(display_accounts(site_name))
+                                           print('#'*30)
+                                        else:
+                                           print("Sorry....you do not have an account yet")
 
-                                             print('#'*30)
-                                             for account in display_accounts():
-                                                print(f"Site:{account.account_name} \n Use Name:{account_user_name} \n Password:{password}")
-                                                print('*'*30)
-                              else:
-                                   print("Sorry....you do not have an account yet")
+                              elif short_code == 'copy':
+                                        print(' ')
+                                        print('Enter the site name for the credential password to copy: ')
+                                        chosen_site = input()
+                                        copy_credentials(chosen_site)
+                                        print('')
 
-                            #   elif short_code == 'copy':
-                            #                 print(' ')
-                            #                 print('Enter the site name for the credential password to copy: ')
-                            #                 chosen_site = input()
-                            #                 copy_credentials(chosen_site)
-                            #                 print('')
-                            #  else:
-                            #                 print('Oops! Wrong option entered. Try again.')
 
                    else:
-                        print(' ')
-                        print('Oops! Wrong details entered. Try again or Create an Account.')
+                    print(' ')
+                    print('Oops! Wrong details entered. Try again or Create an Account.')
 
                 else:
                     print("-"*60)

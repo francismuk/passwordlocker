@@ -62,29 +62,21 @@ class Credentials:
                          return credentials
 
         @classmethod
-        def credentials_exist(cls, password):
+        def credentials_exist(cls, site_name):
             for credentials in cls.credentials_list:
-                    if credentials.password == password:
-                        return True
+                return credentials.site_name == site_name
 
-            return False
+
 
         @classmethod
-        def display_credentials(cls, f_name):
+        def display_account(cls, site_name):
                 '''
-                Class method that displays list of  credentials saved
+                method that returns the credetial list
                 '''
-                user_credentials_list = []
                 for credential in cls.credentials_list:
-                     if credential.f_name == f_name:
-                        user_credentials_list.append(credential)
-                        return user_credentials_list
-        @classmethod
-        def display_account(cls):
-          '''
-          method that returns the credetial list
-          '''
-          return cls.credentials_list
+                   if credential.site_name == site_name:
+                       return (f"Site:{credential.site_name} \n Use Name:{credential.account_user_name} \n Password:{credential.password}")
+                 
         
         @classmethod
         def find_by_site_name(cls, site_name):

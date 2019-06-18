@@ -53,7 +53,7 @@ class TestUser(unittest.TestCase):
                 Class method that displays list of  credentials saved
                 '''
                 user_credentials_list = []
-                for credential in credential.credentials_list:
+                for credential in credentials.credentials_list:
                      if credential.f_name == f_name:
                         user_credentials_list.append(credential)
                         return user_credentials_list
